@@ -1,0 +1,18 @@
+-- Crear esquema de Logística
+CREATE SCHEMA logistica;
+
+-- Tabla de Almacenes
+CREATE TABLE logistica.almacenes (
+    id_almacen INT PRIMARY KEY,
+    ubicacion VARCHAR(100) NOT NULL,
+    capacidad_m3 DECIMAL(8, 2)
+);
+
+-- Tabla de Envíos
+CREATE TABLE logistica.envios (
+    id_envio INT PRIMARY KEY,
+    id_pedido INT NOT NULL,
+    destino VARCHAR(200) NOT NULL,
+    estado VARCHAR(30) DEFAULT 'Pendiente',
+    fecha_envio DATE
+);
