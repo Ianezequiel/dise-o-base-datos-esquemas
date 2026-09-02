@@ -1,1 +1,18 @@
+-- Crear esquema de Analytics
+CREATE SCHEMA analytics;
 
+-- Tabla de Métricas Diarias
+CREATE TABLE analytics.metricas_diarias (
+    id_metrica INT PRIMARY KEY,
+    fecha DATE NOT NULL,
+    total_ventas DECIMAL(12, 2),
+    total_envios_completados INT
+);
+
+-- Tabla de Reportes
+CREATE TABLE analytics.reportes (
+    id_reporte INT PRIMARY KEY,
+    nombre_reporte VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    fecha_creacion DATE DEFAULT CURRENT_DATE
+);
